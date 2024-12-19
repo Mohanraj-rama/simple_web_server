@@ -1,6 +1,6 @@
 # EX01 Developing a Simple Webserver
 
-# Date:
+# Date: 13.11.24
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -143,55 +143,169 @@ urlpatterns = [
 ```
 ### simpleserver.html
 ```
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Web Server</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop Configuration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #eaeaea;
+    }
+    .header h1 {
+      font-size: 36px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 18px;
+      color: #7f8c8d;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border: 1px solid #eaeaea;
+    }
+    th {
+      background-color: #2c3e50;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    td {
+      font-size: 16px;
+      color: #34495e;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #ecf0f1;
+      transition: background-color 0.3s ease;
+    }
+    .highlight {
+      background-color: #fef5c4;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+      table {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1><center>LAPTOP CONFIGURATION</center></h1>
-   <table border="5" cellpadding="20" align="center">
-        <tr>
-            <th bgcolor="blue">Specification</th>
-            <th bgcolor="blue">Details</th>
-        </tr>
-            <td bgcolor="red">Model</td>
-            <td bgcolor="red">Lenovo</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>Processor</td>
-            <td>Intel Core i5</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>RAM</td>
-            <td>16GB</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>Storage</td>a
-            <td>256GB SSD</td>
-        </tr>
-        <tr bgcolor="yellow" >
-            <td>Graphics</td>
-            <td>Integrated Intel UHD Graphics</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>Display</td>
-            <td>14-inch FHD (1920 x 1080)</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>Operating System</td>
-            <td>Windows 10</td>
-        </tr>
-        <tr bgcolor="yellow">
-            <td>Colours available</td>
-            <td>Black,White,Grey</td>
-        </tr>
+  <div class="container">
+    <div class="header">
+      <h1>Laptop Configuration</h1>
+      <p>A detailed overview of the specifications</p>
+    </div>
+    <table>
+      <tr>
+        <th>Configuration</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td class="highlight">Operating System</td>
+        <td>Windows 11 Home Single Language 64-bit</td>
+      </tr>
+      <tr>
+        <td>Processor</td>
+        <td>13th Gen Intel(R) Core(TM) i5-13450HX (16 CPUs)</td>
+      </tr>
+      <tr>
+        <td class="highlight">RAM</td>
+        <td>16 GB</td>
+      </tr>
+      <tr>
+        <td>Storage</td>
+        <td>1 TB SSD</td>
+      </tr>
+      <tr>
+        <td class="highlight">Graphics Card</td>
+        <td>NVIDIA GeForce RTX 3050 (6GB)</td>
+      </tr>
+      <tr>
+        <td>Screen Resolution</td>
+        <td>1920 x 1080 (Full HD)</td>
+      </tr>
+      <tr>
+        <td class="highlight">Screen Size</td>
+        <td>15.6 inches</td>
+      </tr>
+      <tr>
+        <td>Battery Capacity</td>
+        <td>56 WHr</td>
+      </tr>
+      <tr>
+        <td class="highlight">Weight</td>
+        <td>2.8 kg</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>Matt Black</td>
+      </tr>
+      <tr>
+        <td class="highlight">Keyboard</td>
+        <td>Orange-Backlit, QWERTY</td>
+      </tr>
+      <tr>
+        <td>Wireless Connectivity</td>
+        <td>Wi-Fi 6, Bluetooth 5.3</td>
+      </tr>
+      <tr>
+        <td class="highlight">Ports</td>
+        <td>USB-C, USB-A, HDMI, Ethernet</td>
+      </tr>
+      <tr>
+        <td>Operating System Architecture</td>
+        <td>64-bit</td>
+      </tr>
     </table>
+  </div>
 </body>
 </html>
 
+
 ```
 # OUTPUT:
-![alt text](<Screenshot 2024-12-07 063730.png>)
+![image](https://github.com/user-attachments/assets/bea4c7a1-2032-4cb8-ac8a-5bc30cedf2a4)
+
+
 # RESULT:
 The program for implementing simple webserver is executed successfully.
